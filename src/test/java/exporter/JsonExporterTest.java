@@ -2,6 +2,7 @@ package exporter;
 
 import org.cafeaulua.lexer.impl.vm53.Token;
 import org.cafeaulua.lexer.impl.vm53.TokenType;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -14,6 +15,7 @@ public class JsonExporterTest {
         );
     }
 
+    @DisplayName("JSON Individual Token Export Test")
     @ParameterizedTest
     @MethodSource("tokenProvider")
     public void testTokenExport(Token token) {

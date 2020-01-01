@@ -1,4 +1,4 @@
-package org.cafeaulua.lexer;
+package org.cafeaulua.lexer.impl.vm53;
 
 public class Token<T> {
     public final String typeName;

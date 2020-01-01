@@ -6,7 +6,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.nio.file.Path;
 
-public class CSVExporter implements Exporter {
+public class JsonExporter implements Exporter {
     @Override
     public void export(Token[] tokens, Path exportPath) {
         // TODO: implement

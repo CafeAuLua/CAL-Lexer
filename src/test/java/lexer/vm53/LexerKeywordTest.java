@@ -12,6 +12,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 public class LexerKeywordTest {
+    // TODO: test factory??
+
     private static Stream<String> singleKeywordProvider() {
         return Stream.of(
                 "and",

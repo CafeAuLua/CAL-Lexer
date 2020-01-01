@@ -38,16 +38,33 @@ public class LexerStringTest {
         );
     }
 
-    @DisplayName("Single Keyword Parse")
+    @DisplayName("Single Keyword Parse Type")
     @ParameterizedTest
     @MethodSource("singleKeywordProvider")
-    public void singleKeywordParseTest(String input) {
+    public void singleKeywordParseTypeTest(String input) {
         Lexer lexer = new StandardLexer();
         Token[] tokens = lexer.tokenizeString(input);
 
-        // TODO: minify to one assertion
-        Assertions.assertEquals(1, tokens.length);
         Assertions.assertEquals(TokenType.KEYWORD, tokens[0].type);
+    }
+
+    @DisplayName("Single Keyword Parse Value")
+    @ParameterizedTest
+    @MethodSource("singleKeywordProvider")
+    public void singleKeywordParseValueTest(String input) {
+        Lexer lexer = new StandardLexer();
+        Token[] tokens = lexer.tokenizeString(input);
+
         Assertions.assertEquals(input, tokens[0].value);
+    }
+
+    @DisplayName("Single Keyword Array Length")
+    @ParameterizedTest
+    @MethodSource("singleKeywordProvider")
+    public void singleKeywordArrayLengthTest(String input) {
+        Lexer lexer = new StandardLexer();
+        Token[] tokens = lexer.tokenizeString(input);
+
+        Assertions.assertEquals(1, tokens.length);
     }
 }

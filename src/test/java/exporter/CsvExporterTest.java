@@ -18,7 +18,7 @@ public class CsvExporterTest {
     @DisplayName("CSV Individual Token Export Test")
     @ParameterizedTest
     @MethodSource("tokenProvider")
-    public void testTokenExport(Token token) {
+    public void tokenExportTest(Token token) {
         // TODO
     }
 }

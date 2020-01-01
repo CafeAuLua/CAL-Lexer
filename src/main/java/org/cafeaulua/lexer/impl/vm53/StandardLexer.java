@@ -1,5 +1,6 @@
 package org.cafeaulua.lexer.impl.vm53;
 
+import org.cafeaulua.common.Token;
 import org.cafeaulua.lexer.Lexer;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 

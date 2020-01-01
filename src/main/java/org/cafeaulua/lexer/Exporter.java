@@ -1,6 +1,6 @@
 package org.cafeaulua.lexer;
 
-import org.cafeaulua.lexer.impl.vm53.Token;
+import org.cafeaulua.common.Token;
 
 import java.nio.file.Path;
 

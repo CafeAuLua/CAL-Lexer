@@ -38,10 +38,10 @@ public class LexerStringTest {
         );
     }
 
-    @DisplayName("Lexer#String Keywords Single Test")
+    @DisplayName("String Lexing - Single Keyword Parse")
     @ParameterizedTest
     @MethodSource("singleKeywordProvider")
-    public void singleKeywordTest(String input) {
+    public void singleKeywordParseTest(String input) {
         Lexer lexer = new StandardLexer();
         Token[] tokens = lexer.tokenizeString(input);
 

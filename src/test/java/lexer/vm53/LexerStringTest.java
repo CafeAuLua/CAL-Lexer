@@ -38,7 +38,7 @@ public class LexerStringTest {
         );
     }
 
-    @DisplayName("String Lexing - Single Keyword Parse")
+    @DisplayName("Single Keyword Parse")
     @ParameterizedTest
     @MethodSource("singleKeywordProvider")
     public void singleKeywordParseTest(String input) {

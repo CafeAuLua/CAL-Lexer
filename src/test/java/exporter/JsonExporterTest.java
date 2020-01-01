@@ -15,7 +15,7 @@ public class JsonExporterTest {
         );
     }
 
-    @DisplayName("JSON Individual Token Export Test")
+    @DisplayName("JSON Individual Token Export")
     @ParameterizedTest
     @MethodSource("tokenProvider")
     public void tokenExportTest(Token token) {

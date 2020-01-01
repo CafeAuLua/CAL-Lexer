@@ -8,19 +8,19 @@ import java.nio.file.Path;
 
 public class StandardLexer implements Lexer {
     @Override
-    public Token[] parseFromFile(Path filePath) {
+    public Token[] tokenizeFile(Path filePath) {
         // TODO: implement
         throw new NotImplementedException();
     }
 
     @Override
-    public Token[] parseFromString(String source) {
+    public Token[] tokenizeString(String source) {
         // TODO: implement
         throw new NotImplementedException();
     }
 
     @Override
-    public Token[] parseFromStream(InputStream source) {
+    public Token[] tokenizeStream(InputStream source) {
         // TODO: implement
         throw new NotImplementedException();
     }

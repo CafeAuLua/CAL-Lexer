@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.nio.file.Path;
 
 public interface Lexer {
-    Token[] parseFromFile(Path filePath);
-    Token[] parseFromString(String source);
-    Token[] parseFromStream(InputStream source);
+    Token[] tokenizeFile(Path filePath);
+    Token[] tokenizeString(String source);
+    Token[] tokenizeStream(InputStream source);
 }

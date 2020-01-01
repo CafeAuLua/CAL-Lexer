@@ -1,7 +1,7 @@
 package exporter;
 
-import org.cafeaulua.lexer.impl.vm53.Token;
-import org.cafeaulua.lexer.impl.vm53.TokenType;
+import org.cafeaulua.common.Token;
+import org.cafeaulua.common.vm53.TokenType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

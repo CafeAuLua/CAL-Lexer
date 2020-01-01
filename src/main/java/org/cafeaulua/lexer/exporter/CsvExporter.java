@@ -1,7 +1,7 @@
 package org.cafeaulua.lexer.exporter;
 
+import org.cafeaulua.common.Token;
 import org.cafeaulua.lexer.Exporter;
-import org.cafeaulua.lexer.impl.vm53.Token;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.nio.file.Path;

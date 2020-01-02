@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 public class LexerKeywordTest {
     // TODO: test factory??
@@ -26,6 +27,10 @@ public class LexerKeywordTest {
         }
 
         return readFileAsString;
+    }
+
+    private static Stream<String> multiKeywordProvider() throws IOException, URISyntaxException {
+        return Stream.of(keywordsReader());
     }
 
     private static String[] singleKeywordProvider() throws IOException, URISyntaxException {

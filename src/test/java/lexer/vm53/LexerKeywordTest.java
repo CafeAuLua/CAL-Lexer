@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class LexerKeywordTest {
@@ -80,6 +82,13 @@ public class LexerKeywordTest {
         long finalCount = Stream.of(tokens)
                 .filter((token) -> token.type == TokenType.KEYWORD).count();
 
-        Assertions.assertEquals(expectedAmount, finalCount);
+        Assertions.assertEquals(expectedAmount, finalCount,
+                String.format(
+                    "Token(s) were not parsed correctly.\nExpected type values: %s\nProvided tokens: %s",
+                    Arrays.toString(singleKeywordProvider()),
+                    Stream.of(tokens).map(t -> String.format("{\"%s\", \"%s\"}", t.type.name, t.value))
+                            .collect(Collectors.joining(", ", "[ ", " ]"))
+                )
+        );
     }
 }

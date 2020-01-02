@@ -27,8 +27,8 @@ public class LexerKeywordTest {
         return keywordsProvider().split("(\\W|\\n)+");
     }
 
-    @BeforeAll
-    public void beforeAll() {
+    @BeforeEach
+    void beforeEach() {
         _logger = LoggerFactory.getLogger(this.getClass());
     }
 

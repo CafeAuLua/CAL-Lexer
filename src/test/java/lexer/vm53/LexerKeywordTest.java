@@ -17,10 +17,15 @@ import java.nio.file.Paths;
 
 public class LexerKeywordTest {
     // TODO: test factory??
+    private static String readFileAsString = null;
     private Logger _logger;
 
-    private static String keywordsProvider() throws IOException, URISyntaxException {
-        return new String(Files.readAllBytes(Paths.get(LexerKeywordTest.class.getResource("/keywords-valid.txt").toURI())));
+    private static String keywordsReader() throws IOException, URISyntaxException {
+        if (readFileAsString == null) {
+            readFileAsString = new String(Files.readAllBytes(Paths.get(LexerKeywordTest.class.getResource("/keywords-valid.txt").toURI())));
+        }
+
+        return readFileAsString;
     }
 
     private static String[] singleKeywordProvider() throws IOException, URISyntaxException {

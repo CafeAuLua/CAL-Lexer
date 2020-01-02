@@ -29,10 +29,6 @@ public class LexerKeywordTest {
         return readFileAsString;
     }
 
-    private static Stream<String> multiKeywordProvider() throws IOException, URISyntaxException {
-        return Stream.of(keywordsReader());
-    }
-
     private static String[] singleKeywordProvider() throws IOException, URISyntaxException {
         return keywordsReader().split("(\\W|\\n)+");
     }

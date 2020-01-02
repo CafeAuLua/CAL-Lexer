@@ -29,7 +29,7 @@ public class LexerKeywordTest {
     }
 
     private static String[] singleKeywordProvider() throws IOException, URISyntaxException {
-        return keywordsProvider().split("(\\W|\\n)+");
+        return keywordsReader().split("(\\W|\\n)+");
     }
 
     @BeforeEach

@@ -67,4 +67,19 @@ public class LexerKeywordTest {
 
         Assertions.assertEquals(1, tokens.length);
     }
+
+    @Test
+    @DisplayName("Multiple Keyword Parse Types")
+    void multiKeywordsParseTypeTest() throws IOException, URISyntaxException {
+        // I don't think this is the correct use of a parameterized test but I'm lazy
+        Lexer lexer = new StandardLexer();
+        Token[] tokens = lexer.tokenizeString(keywordsReader());
+
+        long expectedAmount = singleKeywordProvider().length;
+        // Streams are beautiful things
+        long finalCount = Stream.of(tokens)
+                .filter((token) -> token.type == TokenType.KEYWORD).count();
+
+        Assertions.assertEquals(expectedAmount, finalCount);
+    }
 }

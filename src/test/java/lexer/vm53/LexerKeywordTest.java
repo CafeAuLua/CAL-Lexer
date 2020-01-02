@@ -4,71 +4,61 @@ import org.cafeaulua.common.Token;
 import org.cafeaulua.common.vm53.TokenType;
 import org.cafeaulua.lexer.Lexer;
 import org.cafeaulua.lexer.impl.vm53.StandardLexer;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
 
-import java.util.stream.Stream;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class LexerKeywordTest {
     // TODO: test factory??
+    private Logger _logger;
 
-    private static Stream<String> singleKeywordProvider() {
-        return Stream.of(
-                "and",
-                "break",
-                "do",
-                "else",
-                "elseif",
-                "end",
-                "false",
-                "for",
-                "function",
-                "if",
-                "in",
-                "local",
-                "nil",
-                "not",
-                "or",
-                "repeat",
-                "return",
-                "then",
-                "true",
-                "until",
-                "while"
-        );
+    private static String keywordsProvider() throws IOException, URISyntaxException {
+        return new String(Files.readAllBytes(Paths.get(LexerKeywordTest.class.getResource("/keywords-valid.txt").toURI())));
     }
 
-    @DisplayName("Single Keyword Parse Type")
+    private static String[] singleKeywordProvider() throws IOException, URISyntaxException {
+        return keywordsProvider().split("(\\W|\\n)+");
+    }
+
+    @BeforeAll
+    public void beforeAll() {
+        _logger = LoggerFactory.getLogger(this.getClass());
+    }
+
     @ParameterizedTest
+    @DisplayName("Single Keyword Parse Type")
     @MethodSource("singleKeywordProvider")
-    public void singleKeywordParseTypeTest(String input) {
+    void singleKeywordParseTypeTest(String input) {
         Lexer lexer = new StandardLexer();
         Token[] tokens = lexer.tokenizeString(input);
 
         Assertions.assertEquals(TokenType.KEYWORD, tokens[0].type);
     }
 
-    @DisplayName("Single Keyword Parse Value")
     @ParameterizedTest
+    @DisplayName("Single Keyword Parse Value")
     @MethodSource("singleKeywordProvider")
-    public void singleKeywordParseValueTest(String input) {
+    void singleKeywordParseValueTest(String input) {
         Lexer lexer = new StandardLexer();
         Token[] tokens = lexer.tokenizeString(input);
 
         Assertions.assertEquals(input, tokens[0].value);
     }
 
-    @DisplayName("Single Keyword Array Length")
     @ParameterizedTest
+    @DisplayName("Single Keyword Array Length")
     @MethodSource("singleKeywordProvider")
-    public void singleKeywordArrayLengthTest(String input) {
+    void singleKeywordArrayLengthTest(String input) {
         Lexer lexer = new StandardLexer();
         Token[] tokens = lexer.tokenizeString(input);
 
         Assertions.assertEquals(1, tokens.length);
     }
-
-    // TODO: keywords in file parsing
 }

@@ -17,6 +17,18 @@ public class LexerStringLiteralTest {
     }
 
     @Test
+    @DisplayName("Single String Literal Newline Parse Test")
+    void singleStrLitNewlineParseTest() {
+        // Stub
+    }
+
+    @Test
+    @DisplayName("Multiple String Literal Newline Parse Test")
+    void multiStrLitNewlineParseTest() {
+        // Stub
+    }
+
+    @Test
     @DisplayName("Single String In-Context Parse Test")
     void singleStrLitContextParseTest() {
         // Stub

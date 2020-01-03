@@ -14,7 +14,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -87,6 +89,24 @@ public class LexerKeywordTest {
                     "Provided values did not match expected value!\nProvided tokens: %s\nExpected value: %s",
                     formatTokensForAssertMessage(tokens),
                     TokenType.KEYWORD.name
+                )
+        );
+    }
+
+    @Test
+    @DisplayName("Multiple Keyword Parse Values")
+    void multiKeywordsParseValueTest() throws IOException, URISyntaxException {
+        Lexer lexer = new StandardLexer();
+        Token[] tokens = lexer.tokenizeString(keywordsReader());
+
+        String[] expectedValues = singleKeywordProvider();
+        String[] providedValues = (String[]) Stream.of(tokens).map(token -> token.value).toArray();
+
+        Assertions.assertArrayEquals(expectedValues, providedValues,
+                String.format(
+                        "Provided values did not match expected values!\nProvided tokens: %s\nExpected token values: %s",
+                        formatTokensForAssertMessage(tokens),
+                        Arrays.toString(expectedValues)
                 )
         );
     }

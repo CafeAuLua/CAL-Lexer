@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 public class LexerKeywordTest {
     // TODO: test factory??
     private static String readFileAsString = null;
-    private Logger _logger;
+//    private Logger _logger;
 
     private static String keywordsReader() throws IOException, URISyntaxException {
         if (readFileAsString == null) {
@@ -39,7 +39,7 @@ public class LexerKeywordTest {
 
     @BeforeEach
     void beforeEach() {
-        _logger = LoggerFactory.getLogger(this.getClass());
+//        _logger = LoggerFactory.getLogger(this.getClass());
     }
 
     @ParameterizedTest

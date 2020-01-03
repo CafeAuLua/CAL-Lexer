@@ -73,6 +73,16 @@ public class LexerKeywordTest {
     }
 
     @Test
+    @DisplayName("Multiple Keyword Array Length")
+    void multiKeywordArrayLengthTest() throws IOException, URISyntaxException {
+        Lexer lexer = new StandardLexer();
+        Token[] tokens = lexer.tokenizeString(keywordsReader());
+        int expectedLength = singleKeywordProvider().length;
+
+        Assertions.assertEquals(expectedLength, tokens.length);
+    }
+
+    @Test
     @DisplayName("Multiple Keyword Parse Types")
     void multiKeywordsParseTypeTest() throws IOException, URISyntaxException {
         // I don't think this is the correct use of a parameterized test but I'm lazy

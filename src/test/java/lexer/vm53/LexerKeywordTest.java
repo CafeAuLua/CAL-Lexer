@@ -43,6 +43,16 @@ public class LexerKeywordTest {
     }
 
     @ParameterizedTest
+    @DisplayName("Single Keyword Array Length")
+    @MethodSource("singleKeywordProvider")
+    void singleKeywordArrayLengthTest(String input) {
+        Lexer lexer = new StandardLexer();
+        Token[] tokens = lexer.tokenizeString(input);
+
+        Assertions.assertEquals(1, tokens.length);
+    }
+
+    @ParameterizedTest
     @DisplayName("Single Keyword Parse Type")
     @MethodSource("singleKeywordProvider")
     void singleKeywordParseTypeTest(String input) {
@@ -60,16 +70,6 @@ public class LexerKeywordTest {
         Token[] tokens = lexer.tokenizeString(input);
 
         Assertions.assertEquals(input, tokens[0].value);
-    }
-
-    @ParameterizedTest
-    @DisplayName("Single Keyword Array Length")
-    @MethodSource("singleKeywordProvider")
-    void singleKeywordArrayLengthTest(String input) {
-        Lexer lexer = new StandardLexer();
-        Token[] tokens = lexer.tokenizeString(input);
-
-        Assertions.assertEquals(1, tokens.length);
     }
 
     @Test

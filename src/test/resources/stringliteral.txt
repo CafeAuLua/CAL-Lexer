@@ -1,0 +1,2 @@
+"some string literal""some other string literal""123456""7890abc"
+'single quoted string''another single quoted string''last string literal'

@@ -1,10 +1,42 @@
 package lexer.vm53;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 public class LexerStringLiteralTest {
-    // 1 string literal
-    // multi string literal
-    // 1 literal mixed tokens
-    // multi literal mixed tokens
-    // unfinished string literal
-    // unfinished string literal mixed tokens
+    @Test
+    @DisplayName("Single String Literal Parse Test")
+    void singleStrLitParseTest() {
+        // Stub
+    }
+
+    @Test
+    @DisplayName("Multiple String Literal Parse Test")
+    void multiStrLitParseTest() {
+        // Stub
+    }
+
+    @Test
+    @DisplayName("Single String In-Context Parse Test")
+    void singleStrLitContextParseTest() {
+        // Stub
+    }
+
+    @Test
+    @DisplayName("Multiple String In-Context Parse Test")
+    void multiStrLitContextParseTest() {
+        // Stub
+    }
+
+    @Test
+    @DisplayName("Single Incomplete String Literal Parse Test")
+    void singleIncompleteStrLitParseTest() {
+        // Stub
+    }
+
+    @Test
+    @DisplayName("Multiple Incomplete String Literal Parse Test")
+    void multiIncompleteStrLitParseTest() {
+        // Stub
+    }
 }

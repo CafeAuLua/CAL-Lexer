@@ -84,10 +84,10 @@ public class LexerKeywordTest {
 
         Assertions.assertEquals(expectedAmount, finalCount,
                 String.format(
-                    "Expected values did not match provided values!\nExpected type value: %s\nProvided tokens: %s",
-                    TokenType.KEYWORD.name,
+                    "Provided values did not match expected value!\nProvided tokens: %s\nExpected value: %s",
                     Stream.of(tokens).map(t -> String.format("{\"%s\", \"%s\"}", t.type.name, t.value))
-                            .collect(Collectors.joining(", ", "[ ", " ]"))
+                            .collect(Collectors.joining(", ", "[ ", " ]")),
+                    TokenType.KEYWORD.name
                 )
         );
     }

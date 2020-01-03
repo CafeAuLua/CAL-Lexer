@@ -26,7 +26,7 @@ public class LexerKeywordTest {
 
     private static String keywordsReader() throws IOException, URISyntaxException {
         if (readFileAsString == null) {
-            readFileAsString = new String(Files.readAllBytes(Paths.get(LexerKeywordTest.class.getResource("/keywords-valid.txt").toURI())));
+            readFileAsString = new String(Files.readAllBytes(Paths.get(LexerKeywordTest.class.getResource("/keywords.txt").toURI())));
         }
 
         return readFileAsString;

@@ -86,9 +86,9 @@ public class LexerKeywordTest {
 
         Assertions.assertEquals(expectedAmount, finalCount,
                 String.format(
-                    "Provided values did not match expected value!\nProvided tokens: %s\nExpected value: %s",
-                    formatTokensForAssertMessage(tokens),
-                    TokenType.KEYWORD.name
+                        "Provided values did not match expected value!\nProvided tokens: %s\nExpected token type: %s",
+                        formatTokensForAssertMessage(tokens),
+                        TokenType.KEYWORD.name
                 )
         );
     }
